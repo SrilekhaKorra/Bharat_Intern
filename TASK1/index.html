@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+  <title>Event Registration Form</title>
 </head>
 <body>
-  <div id="left-column">
-    <img src="content management.avif" alt="Content management logo" width="300px" height="300px" style="margin-bottom: 70px;"/>
-    <h1 style="margin-bottom: 15px;">CONTENT<h1>
-    <h1>MANAGEMENT TOOL</h1>
-  </div>
+  <h2>Register for the Event</h2>
+  <form action="/submit_registration" method="post">
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
 
-  <div id="container">
-    <div id="right-column">
-    <h1>Summary</h1>
-    <textarea id="textarea" draggable="true" placeholder="Enter your summary"></textarea>
-    <h2 style="justify-content: left; margin-right: 60%;">Upload Image</h2>
-    <input type="file" id="imageUploadBtn" accept="image/*" onchange="previewImage(event)" draggable="true" />
-    <h2 style="justify-content: left; margin-right: 60%;">Upload Video</h2>
-    <input type="file" id="videoUploadBtn" accept="video/*" onchange="previewVideo(event)" draggable="true" />
-    <div id="dropbox" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
-    <button id="openBlogBtn" onclick="openBlog()">Open Blog</button>
-        </div>
-  </div>
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="phone" name="phone" required><br><br>
+
+    <label for="ticket">Ticket Type:</label><br>
+    <select id="ticket" name="ticket">
+      <option value="general">General Admission</option>
+      <option value="vip">VIP</option>
+      <option value="student">Student</option>
+    </select><br><br>
+
+    <label for="comments">Additional Comments:</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="40"></textarea><br><br>
+
+    <input type="submit" value="Register">
+  </form>
 </body>
 </html>
